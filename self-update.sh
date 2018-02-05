@@ -25,6 +25,7 @@ git commit -m "Bump ${tag}"
 git tag $tag
 
 echo "${GIT_PRIVATE_KEY}" | base64 -d > git_rsa
+sudo chmod 0600 git_rsa
 
 export GIT_SSH_COMMAND="ssh -i $PWD/git_rsa"
 git remote set-url origin git@github.com:etiennetremel/docker-hugo.git
@@ -32,3 +33,5 @@ git config --global user.email "builds@travis-ci.com"
 git config --global user.name "Travis CI"
 git push origin master
 git push origin $tag
+
+rm git_rsa
