@@ -18,7 +18,7 @@ fi
 
 echo "Bumping version to ${tag}"
 
-sed 's/HUGO_VERSION=[0-9.]*/HUGO_VERSION='"${tag}"'/' Dockerfile
+sed -i 's/HUGO_VERSION=[0-9.]*/HUGO_VERSION='"${tag}"'/' Dockerfile
 
 git add Dockerfile
 git commit -m "Bump ${tag}"
@@ -27,6 +27,7 @@ git tag $tag
 echo "${GIT_PRIVATE_KEY}" | base64 -d > git_rsa
 
 export GIT_SSH_COMMAND="ssh -i $PWD/git_rsa"
+git remote set-url origin git@github.com:etiennetremel/docker-hugo.git
 git config --global user.email "builds@travis-ci.com"
 git config --global user.name "Travis CI"
 git push origin master
