@@ -1,7 +1,13 @@
 Docker Hugo
 ===========
 
-> Super slim Hugo Docker container based on the scratch image
+> Super slim [Hugo](https://gohugo.io) Docker container based on the scratch
+image
+
+![Docker build status][badge-build-status] ![Image size][badge-image-size]
+
+[badge-build-status]: https://img.shields.io/docker/build/etiennetremel/hugo.svg
+[badge-image-size]: https://img.shields.io/imagelayers/image-size/etiennetremel/hugo/latest.svg
 
 
 ## Getting started
