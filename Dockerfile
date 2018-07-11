@@ -1,5 +1,5 @@
 FROM alpine:3.7
-ENV HUGO_VERSION=0.36
+ENV HUGO_VERSION=0.43
 WORKDIR /root
 RUN apk add --update openssl \
   && wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
